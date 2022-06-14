@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import { getArticles } from "../utils/api";
 import { useParams } from "react-router-dom";
 
-const Home = () => {
+const Articles = () => {
 const [articles,setArticles] = useState([])
 const [isLoading, setIsLoading] = useState(true);
-const {topic} = useParams()
-console.log(topic)
+const {slug} = useParams()
+
 
 
 
 useEffect(()=>{
-getArticles().then((articles)=>{
+getArticles(slug).then((articles)=>{
 setArticles(articles)
 setIsLoading(false)
 })},[])
@@ -39,4 +39,4 @@ return(
     );
 };
 
-export default Home;
+export default Articles;

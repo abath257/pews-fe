@@ -7,7 +7,6 @@ const[topics,setTopics] = useState([])
 
 useEffect(()=>{
     getTopics().then((topicsFromApi)=>{
-    console.log(topicsFromApi)
     setTopics(topicsFromApi)
     })
 },[])
