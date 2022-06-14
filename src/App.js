@@ -8,9 +8,12 @@ function App() {
     <div className="App">
   <Header />
   <Home className="Home" />
-  <Route></Route>
-    </div>
-  );
-}
+  <Routes>
+  <Route path ='/' element={<Home />} />
+  <Route path ='/topics/:topic_id' element={<Home />} />
+  </Routes>
+  </div>
+  
+)}
 
 export default App;
