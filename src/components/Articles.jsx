@@ -14,7 +14,7 @@ useEffect(()=>{
 getArticles(slug).then((articles)=>{
 setArticles(articles)
 setIsLoading(false)
-})},[])
+})},[articles])
 
 
 
