@@ -9,3 +9,9 @@ export const getArticles = () =>{
         return data.articles
     })
 }
+
+export const getTopics = () =>{
+    return articleApi.get('/topics').then(({data})=>{
+    return data.topics
+    })
+}

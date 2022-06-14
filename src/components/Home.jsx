@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../utils/api";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
 const [articles,setArticles] = useState([])
 const [isLoading, setIsLoading] = useState(true);
+const {topic} = useParams()
+console.log(topic)
+
+
 
 useEffect(()=>{
 getArticles().then((articles)=>{
