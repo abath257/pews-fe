@@ -1,12 +1,36 @@
 .App {
   text-align: center;
-}
+  /* display:grid;
+  grid-template-areas:
+    'header''header'
+    'nav main';
+    grid-template-columns: auto auto;
+    grid-template-rows: 100%; */
+   
+    }
+
 
 header {
   border: solid;
   background-color: #84dfc5;
-  padding : 3rem
+  padding : 3rem;
+  /* grid-area: header */
 }
+
+.Nav{
+  grid-area: nav;
+}
+
+.Main{
+/* display:flex;
+  
+  grid-area: main;
+  
+  flex-wrap:wrap;
+  
+  justify-content:spacearound; */
+}
+
 
 #articles__header{
   background-color: peachpuff;
