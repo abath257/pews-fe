@@ -1,12 +1,28 @@
 .App {
   text-align: center;
-}
+  display:grid;
+  grid-template-areas:
+    'header''header'
+    'nav main';
+    grid-template-rows: auto;
+    grid-template-columns: 25% auto;
+    }
+
 
 header {
   border: solid;
   background-color: #84dfc5;
-  padding : 3rem
+  padding : 3rem;
+  grid-areas: header
 }
+
+.Nav{
+  grid-areas:nav;
+}
+
+.Main{
+}
+
 
 #articles__header{
   background-color: peachpuff;

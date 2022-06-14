@@ -2,22 +2,27 @@ import { useEffect, useState } from "react";
 import { getTopics } from "../utils/api";
 import { Link } from "react-router-dom";
 
-export const Nav = () =>{
-const[topics,setTopics] = useState([])
+export const Nav = () => {
+  const [topics, setTopics] = useState([]);
 
-useEffect(()=>{
-    getTopics().then((topicsFromApi)=>{
-    setTopics(topicsFromApi)
-    })
-},[])
+  useEffect(() => {
+    getTopics().then((topicsFromApi) => {
+      setTopics(topicsFromApi);
+    });
+  }, []);
 
-return(
-<nav>
-{topics.map((topic)=>{
-return <Link to={`/topics/${topic.slug}`}><h3>{topic.slug}</h3></Link>  
-})}    
-</nav>   
-)
-
-
-}
+  return (
+    <nav className="Nav">
+      <Link to={`/`}>
+        <h3>Home</h3>
+      </Link>
+      {topics.map((topic) => {
+        return (
+            <Link to={`/topics/${topic.slug}`}>
+              <h3>{topic.slug}</h3>
+            </Link>
+        );
+      })}
+    </nav>
+  );
+};

@@ -9,9 +9,9 @@ const {slug} = useParams()
 
 
 
-
 useEffect(()=>{
 getArticles(slug).then((articles)=>{
+    console.log(articles)
 setArticles(articles)
 setIsLoading(false)
 })},[articles])
@@ -21,7 +21,7 @@ setIsLoading(false)
 
 if (isLoading === true) return(',.....loading')
     return (
-   <>
+   <main className="main">
      <h2 id = "articles__header">Positive news articles</h2> 
    <ul id = "articlesList">
     {articles.map((article)=>{
@@ -35,7 +35,7 @@ return(
 )
     })}    
     </ul>
-    </>
+    </main>
     );
 };
 

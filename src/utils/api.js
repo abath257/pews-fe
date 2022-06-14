@@ -5,11 +5,14 @@ const articleApi = axios.create({
 })
 
 export const getArticles = (slug) =>{
-    console.log(slug)
-    return articleApi.get('/articles?',{params: {topic :`${slug}`}}).then(({data})=>{
+    if(slug){
+    return articleApi.get('/articles',{params: {topic :`${slug}`}}).then(({data})=>{
         return data.articles
+    })} else {return articleApi.get('/articles').then(({data})=>{
+        return data.articles
+
     })
-}
+}}
 
 export const getTopics = () =>{
     return articleApi.get('/topics').then(({data})=>{

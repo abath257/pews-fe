@@ -3,7 +3,7 @@ import Articles from './components/Articles';
 import { Routes,Route } from 'react-router-dom';
 import './App.css';
 import { Nav } from './components/Nav';
-import { useParams } from "react-router-dom";
+
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
  <Nav />
   <Routes>
   <Route path ='/' element={<Articles />} />
-  <Route path ='/topics/:slug' element={<Articles/>} />
+  <Route path ='/topics/:slug' element={<Articles />} />
   </Routes>
   </div>
   
