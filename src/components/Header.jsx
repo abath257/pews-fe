@@ -2,7 +2,12 @@
 
 const Header = () => {
     return (
-        <header><h1>Positive News</h1></header>   
+       <>
+       
+        <header className ="header" >
+        <img src="./treeee.png" alt="logo" className ="logo" />
+        <h1>Positive News</h1></header>  
+        </>
     );
 };
 

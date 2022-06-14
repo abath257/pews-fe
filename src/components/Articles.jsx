@@ -11,7 +11,6 @@ const {slug} = useParams()
 
 useEffect(()=>{
 getArticles(slug).then((articles)=>{
-    console.log(articles)
 setArticles(articles)
 setIsLoading(false)
 })},[articles])
