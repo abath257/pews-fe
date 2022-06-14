@@ -7,7 +7,6 @@ const [isLoading, setIsLoading] = useState(true);
 
 useEffect(()=>{
 getArticles().then((articles)=>{
-    console.log(articles)
 setArticles(articles)
 setIsLoading(false)
 })},[])
