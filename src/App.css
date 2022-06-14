@@ -2,4 +2,29 @@
   text-align: center;
 }
 
+header {
+  border: solid;
+  background-color: mediumspringgreen;
+  padding : 3rem
+}
 
+#articles__header{
+  background-color: peachpuff;
+  margin:0;
+  padding: 50px
+}
+
+#articlesList{
+  background-color: peachpuff;
+  margin:0;
+}
+
+#article{
+  background-color: white;
+  border-style: solid;
+  box-shadow: 5px 10px;
+  margin: 3rem;
+  margin-top: 0;
+  border-radius: 25px;
+  list-style: none;
+}
