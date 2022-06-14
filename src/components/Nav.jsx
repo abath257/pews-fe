@@ -12,7 +12,7 @@ export const Nav = () => {
   }, []);
 
   return (
-    <nav className="Nav">
+    <nav className = "nav">
       <Link to={`/`}>
         <h3>Home</h3>
       </Link>

@@ -12,7 +12,7 @@ function App() {
  <Nav />
   <Routes>
   <Route path ='/' element={<Articles />} />
-  <Route path ='/topics/:slug' element={<Articles />} />
+  <Route path ='/topics/:slug' element={<Articles />}/>
   </Routes>
   </div>
   
