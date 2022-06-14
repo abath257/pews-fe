@@ -1,11 +1,12 @@
 .App {
   text-align: center;
-  display:grid;
+  /* display:grid;
   grid-template-areas:
     'header''header'
     'nav main';
-    grid-template-rows: auto;
-    grid-template-columns: 25% auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: 100%; */
+   
     }
 
 
@@ -13,14 +14,21 @@ header {
   border: solid;
   background-color: #84dfc5;
   padding : 3rem;
-  grid-areas: header
+  /* grid-area: header */
 }
 
 .Nav{
-  grid-areas:nav;
+  grid-area: nav;
 }
 
 .Main{
+/* display:flex;
+  
+  grid-area: main;
+  
+  flex-wrap:wrap;
+  
+  justify-content:spacearound; */
 }
 
 
