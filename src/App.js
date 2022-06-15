@@ -14,8 +14,10 @@ function App() {
         <Route path="/" element={<Articles />} />
         <Route path="/topics/:slug" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
-        <Route path="/topics/:topic/articles/:article_id" element={<SingleArticle />} />
-        
+        <Route
+          path="/topics/:topic/articles/:article_id"
+          element={<SingleArticle />}
+        />
       </Routes>
     </div>
   );

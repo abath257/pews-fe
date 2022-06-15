@@ -1,49 +1,43 @@
 .App {
   text-align: center;
-  display:grid;
+  display: grid;
   grid-template-areas:
-    'logo header'
-    'nav main';
-    /* grid-template-columns: 25% auto;
+    "logo header"
+    "nav main";
+  /* grid-template-columns: 25% auto;
     grid-template-rows: auto auto; */
-   
-    }
-
+}
 
 .header {
   border: solid;
   background-color: #84dfc5;
-  padding : 3rem;
+  padding: 3rem;
   grid-area: header;
   text-align: center;
 }
 
-.nav{
+.nav {
   grid-area: nav;
   padding: 3rem;
 }
 
-.main{
- 
-grid-area: main;
-
-
+.main {
+  grid-area: main;
 }
 
-
-#articles__header{
+#articles__header {
   background-color: peachpuff;
-  margin:0;
+  margin: 0;
   padding: 50px;
   text-align: center;
 }
 
-#articlesList{
+#articlesList {
   background-color: peachpuff;
-  margin:0;
+  margin: 0;
 }
 
-#article{
+#article {
   background-color: white;
   border-style: solid;
   box-shadow: 5px 10px;

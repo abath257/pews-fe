@@ -12,15 +12,15 @@ export const Nav = () => {
   }, []);
 
   return (
-    <nav className = "nav">
+    <nav className="nav">
       <Link to={`/`}>
         <h3>Home</h3>
       </Link>
       {topics.map((topic) => {
         return (
-            <Link to={`/topics/${topic.slug}`}>
-              <h3>{topic.slug}</h3>
-            </Link>
+          <Link to={`/topics/${topic.slug}`}>
+            <h3>{topic.slug}</h3>
+          </Link>
         );
       })}
     </nav>
