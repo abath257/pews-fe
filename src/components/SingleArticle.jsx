@@ -25,7 +25,7 @@ useEffect(()=>{
     <h3>{article.author}</h3>
     <h4>{article.body}</h4>
     <h4>Time: {article.created_at}</h4>
-    <Votes article = {article.title} votes ={article.votes} />
+    <Votes article_id = {article.article_id} votes ={article.votes} />
     <h4>Comments: {article.comment_count}</h4>
     </section>
     </main>

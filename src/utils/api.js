@@ -5,14 +5,12 @@ const articleApi = axios.create({
 });
 
 export const getArticles = (slug) => {
-//  
-    return articleApi
-      .get("/articles", { params: { topic:slug } })
-      .then(({ data }) => {
-        return data.articles;
-      });
-  }
-
+  return articleApi
+    .get("/articles", { params: { topic: slug } })
+    .then(({ data }) => {
+      return data.articles;
+    });
+};
 
 export const getArticleById = (article_id) => {
   return articleApi.get(`/articles/${article_id}`).then(({ data }) => {
@@ -25,3 +23,10 @@ export const getTopics = () => {
     return data.topics;
   });
 };
+
+export const patchVotes = (article_id) => {
+ return articleApi.patch(`/articles/${article_id}`, {inc_votes : 1}).then(({data})=>{
+  return data.article
+ })
+
+}
