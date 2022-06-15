@@ -8,8 +8,8 @@ import { Nav } from "./components/Nav";
 import {UserContext} from "./contexts/User"
 
 function App() {
-  const[user, setUser] = useState([{
-    "username": "testuse "
+  const[user ,setUser] = useState([{
+    "username": "grumpy19"
   }])
     
   
