@@ -15,7 +15,7 @@ useEffect(()=>{
     })})
     
 
-    if (isLoading === true) return ",.....loading";   
+    if (isLoading === true) return (<h2 className="main">",.....loading"</h2>)
     return (
     <>
     <main className = "main">
