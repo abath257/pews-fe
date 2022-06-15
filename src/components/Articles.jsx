@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../utils/api";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Articles = () => {
 const [articles,setArticles] = useState([])
 const [isLoading, setIsLoading] = useState(true);
 const {slug} = useParams()
+
 
 
 
@@ -30,6 +31,7 @@ return(
      <h3>{article.author}</h3>
      <p>{article.body}</p>
      <h3>{article.created_at}</h3>
+  <Link to = {`articles/${article.article_id}`}><h3>View this story</h3></Link>
     </li>
 )
     })}    
