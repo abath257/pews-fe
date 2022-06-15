@@ -12,7 +12,7 @@ const Articles = () => {
       setArticles(articles);
       setIsLoading(false);
     });
-  }, [articles]);
+  }, [slug]);
 
   if (isLoading === true) return ",.....loading";
   return (
