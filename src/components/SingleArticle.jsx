@@ -13,7 +13,7 @@ useEffect(()=>{
     getArticleById(article_id).then((article)=>{
     setArticle(article)
     setIsLoading(false)
-    })})
+    })},[])
     
 
     if (isLoading === true) return (<h2 className="main">",.....loading"</h2>)

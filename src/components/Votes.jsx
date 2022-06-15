@@ -1,23 +1,24 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { patchVotes } from "../utils/api";
 
-const Votes = ({article_id,votes}) => {
-const [voteChange, setVoteChange] = useState()
-  const handleClick = () =>{
-  patchVotes(article_id,1).then((updatedUser)=>{
-    console.log(updatedUser)
-  }).catch((err)=>{
-    console.dir(err)
-  })
-  }
+const Votes = ({ article_id, votes }) => {
+  const [voteChange, setVoteChange] = useState(0);
 
-return(
+  const handleClick = () => {
+    setVoteChange((currVotes) => currVotes + 1);
+    patchVotes(article_id).catch((err) => {
+    setVoteChange((currVotes) => currVotes - 1);
+    });
+  };
+
+  return (
     <>
-    <p>{votes} votes</p>
-    <button onClick = {handleClick}>Vote for this article</button>
+      <p>{votes + voteChange} votes</p>
+      <button onClick={handleClick} disabled={voteChange > 0}>
+        Vote for this article
+      </button>
     </>
-)
-
+  );
 };
 
 export default Votes;
