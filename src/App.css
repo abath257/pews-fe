@@ -4,8 +4,8 @@
   grid-template-areas:
     "logo header"
     "nav main";
-  /* grid-template-columns: 25% auto;
-    grid-template-rows: auto auto; */
+  grid-template-columns: 10% auto;
+    grid-template-rows: auto auto;
 }
 
 .header {
@@ -19,10 +19,13 @@
 .nav {
   grid-area: nav;
   padding: 3rem;
+  background-color: red;
+  min-height: 100vh;
 }
 
 .main {
   grid-area: main;
+  background-color: peachpuff;
 }
 
 #articles__header {
@@ -33,7 +36,6 @@
 }
 
 #articlesList {
-  background-color: peachpuff;
   margin: 0;
 }
 
@@ -45,4 +47,11 @@
   margin-top: 0;
   border-radius: 25px;
   list-style: none;
+}
+
+#singlearticle{
+  background-color: white;
+  margin:auto;
+  max-width: 80vw;
+  max-height: auto;
 }
