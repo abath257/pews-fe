@@ -14,6 +14,12 @@ export const getArticles = (slug) =>{
     })
 }}
 
+export const getArticleById = (article_id) =>{
+return articleApi.get(`/articles/${article_id}`).then(({data})=>{
+ return data.article
+})
+}
+
 export const getTopics = () =>{
     return articleApi.get('/topics').then(({data})=>{
     return data.topics
