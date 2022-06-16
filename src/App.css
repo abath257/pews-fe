@@ -65,6 +65,18 @@ grid-area: nav;
   max-height: auto;
 }
 
+.comments__listitem{
+  list-style: none;
+ grid-area: main;
+ background-color: white;
+ border-style: solid;
+ box-shadow: 5px 10px;
+ margin: 3rem;
+ margin-top: 0;
+ border-radius: 25px;
+ list-style: none;
+}
+
 
 @media only screen and (min-width: 600px) {
 .App {
