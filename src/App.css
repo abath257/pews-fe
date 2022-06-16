@@ -77,6 +77,11 @@ grid-area: nav;
  list-style: none;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 
 @media only screen and (min-width: 600px) {
 .App {

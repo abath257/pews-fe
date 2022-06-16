@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { getCommentsById } from "../utils/api";
 import CommentsCard from "./CommentsCard";
-import AddComment from "./CommentsCard";
+import AddComment from "./AddComment";
+
 const Comments = ({ comment_count, article_id }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comments, setComments] = useState([]);
@@ -23,7 +24,7 @@ const Comments = ({ comment_count, article_id }) => {
         </button>
         {isOpen && <CommentsCard comments={comments} />}
       </section>
-      <footer>
+      <footer className = "comment">
       <AddComment comments ={comments} setComments = {setComments} />
       </footer>
     </>
