@@ -33,7 +33,7 @@ const handleCommentsClick =() =>{
     <h4>{article.body}</h4>
     <h4>Time: {article.created_at}</h4>
     <Votes article_id = {article.article_id} votes ={article.votes} author = {article.author} />
-    <Comments comment_count = {article.comment_count} article_id = {article.article_id} />
+    <Comments comment_count = {article.comment_count} article_id = {article_id} />
     </section>
     </main>
     </>

@@ -31,7 +31,7 @@ export const patchVotes = (article_id , vote) => {
 }
 
 export const getCommentsById = (article_id) => {
-  return articleApi.get(`api/articles/${article_id}/comments`).then(({data})=>{
+  return articleApi.get(`/articles/${article_id}/comments`).then(({data})=>{
     return data.comments
   })
 }
