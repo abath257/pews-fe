@@ -1,11 +1,11 @@
 .App {
-  text-align: center;
   display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content 10vh auto;
   grid-template-areas:
-    "logo header"
-    "nav main";
-  grid-template-columns: 10% auto;
-    grid-template-rows: auto auto;
+    'header'
+    'nav'
+    'main';
 }
 
 .header {
@@ -17,12 +17,21 @@
 }
 
 .nav {
-  grid-area: nav;
-  padding: 3rem;
+grid-area: nav;
+ text-align: center;
   background-color: red;
-  min-height: 100vh;
+  padding: 2rem;
+
+}
+#nav__links {
+  display: flex;
+  flex-direction: row;
 }
 
+#nav__link{
+  text-align: justify;
+  padding : 1rem;
+}
 .main {
   grid-area: main;
   background-color: peachpuff;
@@ -55,3 +64,21 @@
   max-width: 80vw;
   max-height: auto;
 }
+
+
+@media only screen and (min-width: 600px) {
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  grid-template-columns: 12rem auto;
+    grid-template-rows: auto auto;
+}
+#nav__links {
+  display: flex;
+  flex-direction: column
+  }
+}
+
