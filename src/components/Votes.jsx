@@ -32,6 +32,7 @@ const Votes = ({ article_id, votes, author }) => {
       <button onClick={handleDownClick} disabled={voteChange !==0 || user[0].username === author}>
         downvote
       </button>
+      <p>{user[0].username === author? "You cant vote for your own articles" : "Vote for this article"}</p>
     </>
   );
 };
