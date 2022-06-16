@@ -6,18 +6,31 @@ const Votes = ({ article_id, votes, author }) => {
   const  user  = useContext(UserContext);
   const [voteChange, setVoteChange] = useState(0);
 
-  const handleClick = () => {
+  const handleUpClick = () => {
+    const vote = 1
     setVoteChange((currVotes) => currVotes + 1);
-    patchVotes(article_id).catch((err) => {
+    patchVotes(article_id, vote).catch((err) => {
       setVoteChange((currVotes) => currVotes - 1);
     });
   };
 
+  const handleDownClick = () =>{
+    const vote = -1
+    setVoteChange((currVotes) => currVotes - 1);
+    patchVotes(article_id, vote).catch((err) => {
+      setVoteChange((currVotes) => currVotes + 1);
+    });
+  }
+  
+
   return (
     <>
       <p>{votes + voteChange} votes</p>
-      <button onClick={handleClick} disabled={voteChange > 0 || user[0].username === author}>
-        vote
+      <button onClick={handleUpClick} disabled={voteChange !==0 || user[0].username === author}>
+        upvote
+      </button>
+      <button onClick={handleDownClick} disabled={voteChange !==0 || user[0].username === author}>
+        downvote
       </button>
     </>
   );
