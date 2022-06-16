@@ -4,9 +4,10 @@ import CommentsCard from "./CommentsCard";
 import AddComment from "./CommentsCard";
 const Comments = ({ comment_count, article_id }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
   const [comments, setComments] = useState([]);
 
+
+  const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
   useEffect(() => {
     getCommentsById(article_id).then((comments) => {
       setComments(comments);
@@ -23,7 +24,7 @@ const Comments = ({ comment_count, article_id }) => {
         {isOpen && <CommentsCard comments={comments} />}
       </section>
       <footer>
-        <AddComment />
+      <AddComment comments ={comments} setComments = {setComments} />
       </footer>
     </>
   );
