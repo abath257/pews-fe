@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCommentsById } from "../utils/api";
-import CommentsCard from "./commentsCard";
-
+import CommentsCard from "./CommentsCard";
+import AddComment from "./CommentsCard";
 const Comments = ({ comment_count, article_id }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
@@ -22,6 +22,9 @@ const Comments = ({ comment_count, article_id }) => {
         </button>
         {isOpen && <CommentsCard comments={comments} />}
       </section>
+      <footer>
+        <AddComment />
+      </footer>
     </>
   );
 };
