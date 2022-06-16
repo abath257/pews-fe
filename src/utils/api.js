@@ -28,5 +28,10 @@ export const patchVotes = (article_id , vote) => {
  return articleApi.patch(`/articles/${article_id}`, {inc_votes : vote}).then(({data})=>{
   return data.article
  })
+}
 
+export const getCommentsById = (article_id) => {
+  return articleApi.get(`/articles/${article_id}/comments`).then(({data})=>{
+    return data.comments
+  })
 }
