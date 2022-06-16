@@ -2,6 +2,7 @@ import { useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getArticleById } from "../utils/api";
 import Votes from "./Votes";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +16,12 @@ useEffect(()=>{
     setIsLoading(false)
     })},[])
     
+const handleCommentsClick =() =>{
+    
+}
+
+//get our comments here
+
 
     if (isLoading === true) return (<h2 className="main">",.....loading"</h2>)
     return (
@@ -26,7 +33,7 @@ useEffect(()=>{
     <h4>{article.body}</h4>
     <h4>Time: {article.created_at}</h4>
     <Votes article_id = {article.article_id} votes ={article.votes} author = {article.author} />
-    <h4>Comments: {article.comment_count}</h4>
+    <Comments comment_count = {article.comment_count} article_id = {article.article_id} />
     </section>
     </main>
     </>
