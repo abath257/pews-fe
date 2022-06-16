@@ -1,12 +1,14 @@
 .App {
-  text-align: center;
   display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content 10vh auto;
   grid-template-areas:
-    "logo header"
-    "nav main";
-  grid-template-columns: 10% auto;
-    grid-template-rows: auto auto;
+    'header'
+    'nav'
+    'main';
 }
+
+
 
 .header {
   border: solid;
@@ -55,3 +57,15 @@
   max-width: 80vw;
   max-height: auto;
 }
+
+
+@media only screen and (min-width: 600px) {
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  grid-template-columns: 15rem auto;
+    grid-template-rows: auto auto;
+}}
