@@ -20,6 +20,7 @@ const Votes = ({ article_id, votes, author }) => {
     patchVotes(article_id, vote).catch((err) => {
       setVoteChange((currVotes) => currVotes + 1);
     });
+    
   }
   
 
