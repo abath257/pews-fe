@@ -2,18 +2,17 @@ import { useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
 import { postComment } from "../utils/api";
 
-
-const AddComment = ({ setComments, article_id, setCountChange}) => {
+const AddComment = ({ setComments, article_id, setCountChange }) => {
   const [newComment, setNewComment] = useState("");
   const user = useContext(UserContext);
   const [hasPosted, setHasPosted] = useState(false);
 
- 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     setHasPosted(true);
-    setCountChange((currCount)=>{return currCount + 1})
+    setCountChange((currCount) => {
+      return currCount + 1;
+    });
     postComment(article_id, user, newComment).then((commentFromApi) => {
       const newCommentObj = {
         body: commentFromApi.body,
