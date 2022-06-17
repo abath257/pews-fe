@@ -39,6 +39,7 @@ export const getCommentsById = (article_id) => {
 export const postComment = (article_id, user, newComment) =>{
 const name = user[0].username
 return articleApi.post(`/articles/${article_id}/comments`, {username:name, body: newComment}).then(({data})=>{
-console.log(data.comment)
+console.log('apicallmade')
+return data.comment
 }).catch((err)=>{console.log(err)})
 }

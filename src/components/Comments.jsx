@@ -8,13 +8,15 @@ const Comments = ({ comment_count, article_id }) => {
   const [comments, setComments] = useState([]);
 
 
+
   const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
+  
+  
   useEffect(() => {
     getCommentsById(article_id).then((comments) => {
-      console.log('here')
-      setComments(comments);
+      setComments(comments)
     });
-  }, [comments.length]);
+  }, []);
  
   return (
     <>

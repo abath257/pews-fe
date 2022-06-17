@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext} from "react";
 import { UserContext } from "../contexts/User";
 import { postComment } from "../utils/api";
 
@@ -9,8 +9,11 @@ const AddComment = ({ comments, setComments, article_id }) => {
 
   const handleSubmit = (event) =>{
     event.preventDefault()
-      postComment(article_id,user,newComment)
-    }
+    postComment(article_id,user,newComment).then((commentFromApi)=>{
+    const newCommentObj = {body: commentFromApi.body,votes:commentFromApi.votes,author:commentFromApi.author,created_at:commentFromApi.created_at} 
+    setComments((currComments)=>{return[newCommentObj, ...currComments]}) 
+    setNewComment('')
+    })}
 
 
 
