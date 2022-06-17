@@ -76,7 +76,7 @@ grid-area: nav;
  list-style: none;
 }
 
-footer {
+.AddComment {
   position: fixed;
   bottom: 0;
   background-color: #84dfc5;
@@ -97,7 +97,7 @@ footer {
   display: flex;
   flex-direction: column
   }
-  footer {
+  .AddComment {
     position: relative;
     background-color: white;
    }

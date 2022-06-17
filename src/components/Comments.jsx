@@ -20,6 +20,9 @@ const Comments = ({ comment_count, article_id }) => {
  
   return (
     <>
+        <section className = "AddComment">
+      <AddComment comments ={comments} setComments = {setComments} article_id ={article_id}/>
+      </section>
       <section id="Comments">
         <h3>Comments: {comment_count}</h3>
         <button onClick={toggleOpen}>
@@ -27,9 +30,7 @@ const Comments = ({ comment_count, article_id }) => {
         </button>
         {isOpen && <CommentsCard comments={comments} />}
       </section>
-      <footer className = "AddComment">
-      <AddComment comments ={comments} setComments = {setComments} article_id ={article_id}/>
-      </footer>
+  
     </>
   );
 };
