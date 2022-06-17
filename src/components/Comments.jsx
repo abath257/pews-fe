@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getCommentsById } from "../utils/api";
 import CommentsCard from "./CommentsCard";
 import AddComment from "./AddComment";
@@ -11,10 +11,11 @@ const Comments = ({ comment_count, article_id }) => {
   const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
   useEffect(() => {
     getCommentsById(article_id).then((comments) => {
+      console.log('here')
       setComments(comments);
     });
-  }, []);
-
+  }, [comments.length]);
+ 
   return (
     <>
       <section id="Comments">
@@ -25,7 +26,7 @@ const Comments = ({ comment_count, article_id }) => {
         {isOpen && <CommentsCard comments={comments} />}
       </section>
       <footer className = "AddComment">
-      <AddComment comments ={comments} setComments = {setComments} />
+      <AddComment comments ={comments} setComments = {setComments} article_id ={article_id}/>
       </footer>
     </>
   );

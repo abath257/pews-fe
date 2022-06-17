@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import { UserContext } from "../contexts/User";
+import { postComment } from "../utils/api";
 
-const AddComment = ({ comments, setComments }) => {
+
+const AddComment = ({ comments, setComments, article_id }) => {
   const [newComment, setNewComment] = useState("");
+  const  user  = useContext(UserContext);
 
-const handleSubmit = () =>{
-    console.log("here")
-}
+  const handleSubmit = (event) =>{
+    event.preventDefault()
+      postComment(article_id,user,newComment)
+    }
+
+
 
 
   return (
-   
       <form onSubmit={handleSubmit}>
 <label>
     Post a new comment...
@@ -24,6 +30,9 @@ const handleSubmit = () =>{
       </form>
   
   );
-};
+  }
 
 export default AddComment;
+
+
+

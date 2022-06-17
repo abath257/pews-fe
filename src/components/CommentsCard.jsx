@@ -1,6 +1,6 @@
 
 
-const CommentsCard = ({comments}) => {
+const CommentsCard = ({comments}) => {  
     return (
         <div>
             <ul className="comments__list">

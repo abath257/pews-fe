@@ -35,3 +35,10 @@ export const getCommentsById = (article_id) => {
     return data.comments
   })
 }
+
+export const postComment = (article_id, user, newComment) =>{
+const name = user[0].username
+return articleApi.post(`/articles/${article_id}/comments`, {username:name, body: newComment}).then(({data})=>{
+console.log(data.comment)
+}).catch((err)=>{console.log(err)})
+}
