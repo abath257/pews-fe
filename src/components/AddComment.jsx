@@ -2,10 +2,12 @@ import { useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
 import { postComment } from "../utils/api";
 
+
 const AddComment = ({ comments, setComments, article_id }) => {
   const [newComment, setNewComment] = useState("");
   const user = useContext(UserContext);
   const [hasPosted, setHasPosted] = useState(false);
+ 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,10 +23,10 @@ const AddComment = ({ comments, setComments, article_id }) => {
         return [...currComments, newCommentObj];
       });
     });
-
     setNewComment("");
-    setHasPosted(true);
+    setHasPosted(false);
   };
+
   if (!hasPosted) {
     return (
       <form onSubmit={handleSubmit}>
@@ -43,7 +45,7 @@ const AddComment = ({ comments, setComments, article_id }) => {
     );
   }
 
-  return <p>Please wait</p>;
+  return <p>Thanks for posting your article!!</p>;
 };
 
 export default AddComment;
