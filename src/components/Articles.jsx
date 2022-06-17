@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { getArticles } from "../utils/api";
 import { useParams, Link } from "react-router-dom";
 
-
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +14,7 @@ const Articles = () => {
     });
   }, [slug]);
 
-  if (isLoading === true) return (<h2 className="main">",.....loading"</h2>)
+  if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
   return (
     <main className="main">
       <h2 id="articles__header">Positive news articles</h2>

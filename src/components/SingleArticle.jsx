@@ -14,7 +14,7 @@ const SingleArticle = () => {
       setArticle(article);
       setIsLoading(false);
     });
-  }, []);
+  }, [article_id]);
 
   if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
   return (

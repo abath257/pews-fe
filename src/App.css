@@ -20,7 +20,7 @@
 grid-area: nav;
  text-align: center;
   background-color: red;
-  padding: 2rem;
+  padding-bottom: 3rem;
 
 }
 #nav__links {
@@ -29,7 +29,6 @@ grid-area: nav;
 }
 
 #nav__link{
-  text-align: justify;
   padding : 1rem;
 }
 .main {
@@ -77,6 +76,18 @@ grid-area: nav;
  list-style: none;
 }
 
+.AddComment {
+  position: fixed;
+  bottom: 0;
+  background-color: #84dfc5;
+}
+
+#commentbox {
+  text-align: center;
+  height: 2rem;
+  width: 500px;  
+}
+
 
 @media only screen and (min-width: 600px) {
 .App {
@@ -92,5 +103,11 @@ grid-area: nav;
   display: flex;
   flex-direction: column
   }
+  .AddComment {
+    position: relative;
+    background-color: white;
+   }
+
+   
 }
 
