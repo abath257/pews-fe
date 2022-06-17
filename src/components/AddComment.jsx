@@ -3,15 +3,17 @@ import { UserContext } from "../contexts/User";
 import { postComment } from "../utils/api";
 
 
-const AddComment = ({ comments, setComments, article_id }) => {
+const AddComment = ({ setComments, article_id, setCountChange}) => {
   const [newComment, setNewComment] = useState("");
   const user = useContext(UserContext);
   const [hasPosted, setHasPosted] = useState(false);
+
  
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setHasPosted(true);
+    setCountChange((currCount)=>{return currCount + 1})
     postComment(article_id, user, newComment).then((commentFromApi) => {
       const newCommentObj = {
         body: commentFromApi.body,
@@ -20,7 +22,7 @@ const AddComment = ({ comments, setComments, article_id }) => {
         created_at: commentFromApi.created_at,
       };
       setComments((currComments) => {
-        return [...currComments, newCommentObj];
+        return [newCommentObj, ...currComments];
       });
     });
     setNewComment("");
