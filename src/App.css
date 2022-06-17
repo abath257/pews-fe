@@ -20,7 +20,7 @@
 grid-area: nav;
  text-align: center;
   background-color: red;
-  padding: 2rem;
+  padding-bottom: 3rem;
 
 }
 #nav__links {
@@ -29,7 +29,6 @@ grid-area: nav;
 }
 
 #nav__link{
-  text-align: justify;
   padding : 1rem;
 }
 .main {
@@ -80,6 +79,7 @@ grid-area: nav;
 footer {
   position: fixed;
   bottom: 0;
+  background-color: #84dfc5;
 }
 
 
@@ -97,5 +97,10 @@ footer {
   display: flex;
   flex-direction: column
   }
+  footer {
+    position: relative;
+    background-color: white;
+   }
+   
 }
 

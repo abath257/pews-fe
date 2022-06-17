@@ -24,7 +24,7 @@ const Comments = ({ comment_count, article_id }) => {
         </button>
         {isOpen && <CommentsCard comments={comments} />}
       </section>
-      <footer className = "comment">
+      <footer className = "AddComment">
       <AddComment comments ={comments} setComments = {setComments} />
       </footer>
     </>
