@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../utils/api";
 import { useParams, Link } from "react-router-dom";
+import SortBar from './SortBar'
+
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const[searchParams, setSearchParams] = useSearchParams();
   const { slug } = useParams();
+
+  
 
   useEffect(() => {
     getArticles(slug).then((articles) => {
@@ -16,7 +21,9 @@ const Articles = () => {
 
   if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
   return (
+    
     <main className="main">
+      <SortBar />
       <h2 id="articles__header">Positive news articles</h2>
       <ul id="articlesList">
         {articles.map((article) => {
