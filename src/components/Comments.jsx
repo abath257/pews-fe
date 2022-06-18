@@ -22,7 +22,6 @@ const Comments = ({ comment_count, article_id }) => {
         <AddComment
           setComments={setComments}
           article_id={article_id}
-          countchange={countChange}
           setCountChange={setCountChange}
         />
       </section>
@@ -31,7 +30,7 @@ const Comments = ({ comment_count, article_id }) => {
         <button onClick={toggleOpen}>
           {isOpen ? "No comments" : "See comments"}
         </button>
-        {isOpen && <CommentsCard comments={comments} />}
+        {isOpen && <CommentsCard comments={comments}  setCountChange={setCountChange} />}
       </section>
     </>
   );
