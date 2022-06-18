@@ -1,13 +1,11 @@
-import React from "react";
 import { deleteComment } from "../utils/api";
 
 const DeleteComment = ({ comment_id, setCountChange }) => {
- 
   function handleClick(comment_id) {
-    setCountChange((currCount) => currCount - 1);
-    deleteComment(comment_id).catch((err) => {
-      setCountChange((currCount) => currCount + 1);
+    setCountChange((currCount) => {
+      return currCount - 1;
     });
+    deleteComment(comment_id).then(() => {});
   }
 
   return (

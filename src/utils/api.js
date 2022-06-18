@@ -5,7 +5,6 @@ const articleApi = axios.create({
 });
 
 export const getArticles = (slug, sort, order) => {
-  console.log(sort);
   return articleApi
     .get("/articles", { params: { topic: slug, sort_by: sort, order: order } })
     .then(({ data }) => {
