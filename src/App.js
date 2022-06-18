@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import {UserContext} from "./contexts/User"
+import SortBar from "./components/SortBar";
 
 function App() {
   const[user ,setUser] = useState([{
@@ -18,12 +19,12 @@ function App() {
       <div className="App">
       <Header />
       <Nav />
+     
       <Routes>
         <Route path="/" element={<Articles />} />
         <Route path="/topics/:slug" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
-        <Route
-          path="/topics/:topic/articles/:article_id"
+        <Route path="/topics/:topic/articles/:article_id"
           element={<SingleArticle />}
         />
       </Routes>

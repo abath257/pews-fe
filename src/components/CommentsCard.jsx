@@ -1,3 +1,5 @@
+import DeleteComment from "./DeleteComment";
+
 const CommentsCard = ({ comments }) => {
   return (
     <div>
@@ -14,6 +16,7 @@ const CommentsCard = ({ comments }) => {
                 <h4>{comments.votes} Votes</h4>
                 <h4>{comments.created_at}</h4>
               </span>
+              <DeleteComment />
             </li>
           );
         })}

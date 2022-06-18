@@ -1,22 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { getArticles } from "../utils/api";
-import { useParams, Link } from "react-router-dom";
+import SortBar from "./SortBar";
+import { useParams, Link} from "react-router-dom";
+
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
+  const [sort, setSort] = useState("created_at")
+  const [order,setOrder] =useState('desc')
   const [isLoading, setIsLoading] = useState(true);
   const { slug } = useParams();
 
+
+ 
+
+
   useEffect(() => {
-    getArticles(slug).then((articles) => {
+    getArticles(slug, sort, order).then((articles) => {
       setArticles(articles);
       setIsLoading(false);
     });
-  }, [slug]);
+  }, [slug, sort, order]);
 
   if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
   return (
     <main className="main">
+      <SortBar setSort ={setSort} setOrder = {setOrder}/>
+      <p>Sorted by {sort}</p>
       <h2 id="articles__header">Positive news articles</h2>
       <ul id="articlesList">
         {articles.map((article) => {
