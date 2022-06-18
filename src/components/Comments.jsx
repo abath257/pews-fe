@@ -7,24 +7,22 @@ const Comments = ({ comment_count, article_id }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comments, setComments] = useState([]);
   const [countChange, setCountChange] = useState(0);
-  const [renderTrigger,setRenderTrigger]=useState(0)
   const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
- 
+
   useEffect(() => {
     getCommentsById(article_id).then((comments) => {
-      console.log('here')
       setComments(comments);
     });
-  }, [article_id, renderTrigger]);
+  }, [article_id]);
 
   return (
     <>
       <section className="AddComment">
         <AddComment
           setComments={setComments}
+          comments={comments}
           article_id={article_id}
           setCountChange={setCountChange}
-          setRenderTrigger ={setRenderTrigger}
         />
       </section>
       <section id="Comments">
@@ -33,11 +31,7 @@ const Comments = ({ comment_count, article_id }) => {
           {isOpen ? "No comments" : "See comments"}
         </button>
         {isOpen && (
-          <CommentsCard
-          comments ={comments}
-            setCountChange={setCountChange}
-            setRenderTrigger ={setRenderTrigger}
-          />
+          <CommentsCard comments={comments} setCountChange={setCountChange} />
         )}
       </section>
     </>
