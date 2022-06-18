@@ -14,7 +14,7 @@ const Comments = ({ comment_count, article_id }) => {
     getCommentsById(article_id).then((comments) => {
       setComments(comments);
     });
-  }, [article_id]);
+  }, [article_id, comments]);
 
   return (
     <>
