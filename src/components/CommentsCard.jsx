@@ -1,6 +1,6 @@
 import DeleteComment from "./DeleteComment";
 
-const CommentsCard = ({ comments, setCountChange, setComments }) => {
+const CommentsCard = ({ comments, setCountChange, setRenderTrigger }) => {
   return (
     <div>
       <ul className="comments__list">
@@ -19,7 +19,8 @@ const CommentsCard = ({ comments, setCountChange, setComments }) => {
               <DeleteComment
                 comment_id={comments.comment_id}
                 setCountChange={setCountChange}
-                setComments={setComments}
+                setRenderTrigger ={setRenderTrigger}
+                
               />
             </li>
           );

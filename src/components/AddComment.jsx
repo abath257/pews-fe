@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
 import { postComment } from "../utils/api";
 
-const AddComment = ({ setComments, article_id, setCountChange }) => {
+const AddComment = ({ setComments, article_id, setCountChange, setRenderTrigger }) => {
   const [newComment, setNewComment] = useState("");
   const user = useContext(UserContext);
   const [hasPosted, setHasPosted] = useState(false);

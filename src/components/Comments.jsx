@@ -7,8 +7,9 @@ const Comments = ({ comment_count, article_id }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comments, setComments] = useState([]);
   const [countChange, setCountChange] = useState(0);
+  const [renderTrigger,setRenderTrigger]=useState(0)
   const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
-  const renderTrigger =comments.length
+ 
   useEffect(() => {
     getCommentsById(article_id).then((comments) => {
       console.log('here')
@@ -23,6 +24,7 @@ const Comments = ({ comment_count, article_id }) => {
           setComments={setComments}
           article_id={article_id}
           setCountChange={setCountChange}
+          setRenderTrigger ={setRenderTrigger}
         />
       </section>
       <section id="Comments">
@@ -32,9 +34,9 @@ const Comments = ({ comment_count, article_id }) => {
         </button>
         {isOpen && (
           <CommentsCard
-            comments={comments}
+          comments ={comments}
             setCountChange={setCountChange}
-            setComments={setComments}
+            setRenderTrigger ={setRenderTrigger}
           />
         )}
       </section>
