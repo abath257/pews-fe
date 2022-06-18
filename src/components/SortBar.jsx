@@ -1,15 +1,15 @@
 import * as React from "react";
-import { useSearchParams, serializeFormQuery } from "react-router-dom";
 
-function SortBar({setSearchParams}) {
- 
 
+
+
+function SortBar({setSort}) {
   return (
-    <div>
-      <button onClick={setSearchParams("sort_by?date")}>Date</button>
-      <button onClick={setSearchParams("sort_by?date")}>Comment Count</button>
-      <button onClick={setSearchParams("sort_by?date")}>Votes</button>
-    </div>
+    <>
+    <button onClick={()=>{setSort('date')}}>date</button>
+    <button onClick={()=>{setSort('comment_count')}}>comments</button>
+    <button onClick={()=>{setSort('votes')}}>votes</button>
+    </>
   );
 }
 

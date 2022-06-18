@@ -4,7 +4,7 @@ const articleApi = axios.create({
   baseURL: "https://nc-positive-news.herokuapp.com/api",
 });
 
-export const getArticles = (slug) => {
+export const getArticles = (slug, sort) => {
   return articleApi
     .get("/articles", { params: { topic: slug } })
     .then(({ data }) => {
