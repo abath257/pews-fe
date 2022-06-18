@@ -7,7 +7,6 @@ const AddComment = ({
   setComments,
   article_id,
   setCountChange,
-  setRenderTrigger,
 }) => {
   const [newComment, setNewComment] = useState("");
   const user = useContext(UserContext);
@@ -26,12 +25,14 @@ const AddComment = ({
       author: user.username,
       created_at: date,
     };
-    console.log(newCommentObj);
     setComments([...comments, newCommentObj]);
     postComment(article_id, user, newComment).catch((err) => {
       setComments((currComments) => {
         return currComments.slice(-1);
       });
+      setCountChange((currCount) => {
+        return currCount + 1;
+      })
     });
     setNewComment("");
     setHasPosted(false);

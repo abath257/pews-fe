@@ -31,7 +31,7 @@ const Comments = ({ comment_count, article_id }) => {
           {isOpen ? "No comments" : "See comments"}
         </button>
         {isOpen && (
-          <CommentsCard comments={comments} setCountChange={setCountChange} />
+          <CommentsCard comments={comments} setComments ={setComments} setCountChange={setCountChange} />
         )}
       </section>
     </>

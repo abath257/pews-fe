@@ -1,15 +1,29 @@
 import { deleteComment } from "../utils/api";
 
-const DeleteComment = ({ comment_id, setCountChange, setRenderTrigger }) => {
-  function handleClick(comment_id) {
+const DeleteComment = ({
+  comments,
+  setComments,
+  setCountChange,
+  comment_id,
+}) => {
+   
+  function handleClick() {
     setCountChange((currCount) => {
       return currCount - 1;
     });
-    deleteComment(comment_id).then(() => {
-      setRenderTrigger((currNum) => {
-        return currNum + 1;
+    setComments((currComments) => {
+      return currComments.filter((comment) => {
+        return comment.comment_id !== comment_id;
       });
     });
+    deleteComment(comment_id).catch((err) => {
+        setCountChange((currCount) => {
+            return currCount + 1;
+          }) 
+ setComments((currComments)=>{
+    return [...currComments, comments]
+})
+});
   }
 
   return (

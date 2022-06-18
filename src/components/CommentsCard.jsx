@@ -1,6 +1,6 @@
 import DeleteComment from "./DeleteComment";
 
-const CommentsCard = ({ comments, setCountChange}) => {
+const CommentsCard = ({ comments, setComments, setCountChange}) => {
   return (
     <div>
       <ul className="comments__list">
@@ -17,9 +17,10 @@ const CommentsCard = ({ comments, setCountChange}) => {
                 <h4>{comments.created_at}</h4>
               </span>
               <DeleteComment
+                comments = {comments}
+                setComments ={setComments}
                 comment_id={comments.comment_id}
-                setCountChange={setCountChange}
-                
+                setCountChange={setCountChange} 
               />
             </li>
           );
