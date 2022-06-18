@@ -7,7 +7,6 @@ const Comments = ({ comment_count, article_id }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [comments, setComments] = useState([]);
   const [countChange, setCountChange] = useState(0);
-
   const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
 
   useEffect(() => {
@@ -21,8 +20,8 @@ const Comments = ({ comment_count, article_id }) => {
       <section className="AddComment">
         <AddComment
           setComments={setComments}
+          comments={comments}
           article_id={article_id}
-          countchange={countChange}
           setCountChange={setCountChange}
         />
       </section>
@@ -31,7 +30,9 @@ const Comments = ({ comment_count, article_id }) => {
         <button onClick={toggleOpen}>
           {isOpen ? "No comments" : "See comments"}
         </button>
-        {isOpen && <CommentsCard comments={comments} />}
+        {isOpen && (
+          <CommentsCard comments={comments} setComments ={setComments} setCountChange={setCountChange} />
+        )}
       </section>
     </>
   );

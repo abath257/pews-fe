@@ -5,7 +5,6 @@ const articleApi = axios.create({
 });
 
 export const getArticles = (slug, sort, order) => {
-  console.log(sort);
   return articleApi
     .get("/articles", { params: { topic: slug, sort_by: sort, order: order } })
     .then(({ data }) => {
@@ -47,10 +46,15 @@ export const postComment = (article_id, user, newComment) => {
       body: newComment,
     })
     .then(({ data }) => {
-      console.log("apicallmade");
       return data.comment;
     })
     .catch((err) => {
       console.log(err);
     });
 };
+
+export const deleteComment =(comment_id)=>{
+return articleApi.delete(`/comments/${comment_id}`).then(({data})=>{
+return "message deleted"
+})  
+}

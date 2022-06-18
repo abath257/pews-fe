@@ -2,7 +2,12 @@ import { useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
 import { postComment } from "../utils/api";
 
-const AddComment = ({ setComments, article_id, setCountChange }) => {
+const AddComment = ({
+  comments,
+  setComments,
+  article_id,
+  setCountChange,
+}) => {
   const [newComment, setNewComment] = useState("");
   const user = useContext(UserContext);
   const [hasPosted, setHasPosted] = useState(false);
@@ -13,16 +18,21 @@ const AddComment = ({ setComments, article_id, setCountChange }) => {
     setCountChange((currCount) => {
       return currCount + 1;
     });
-    postComment(article_id, user, newComment).then((commentFromApi) => {
-      const newCommentObj = {
-        body: commentFromApi.body,
-        votes: commentFromApi.votes,
-        author: commentFromApi.author,
-        created_at: commentFromApi.created_at,
-      };
+    const date = new Date().toISOString();
+    const newCommentObj = {
+      body: newComment,
+      votes: 0,
+      author: user.username,
+      created_at: date,
+    };
+    setComments([...comments, newCommentObj]);
+    postComment(article_id, user, newComment).catch((err) => {
       setComments((currComments) => {
-        return [newCommentObj, ...currComments];
+        return currComments.slice(-1);
       });
+      setCountChange((currCount) => {
+        return currCount + 1;
+      })
     });
     setNewComment("");
     setHasPosted(false);
