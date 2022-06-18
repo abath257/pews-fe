@@ -6,7 +6,7 @@ import { useParams, Link} from "react-router-dom";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
-  const [sort, setSort] = useState("date")
+  const [sort, setSort] = useState("created_at")
   const [isLoading, setIsLoading] = useState(true);
   const { slug } = useParams();
 
@@ -19,7 +19,7 @@ const Articles = () => {
       setArticles(articles);
       setIsLoading(false);
     });
-  }, [slug]);
+  }, [slug, sort]);
 
   if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
   return (

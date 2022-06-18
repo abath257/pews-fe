@@ -1,12 +1,14 @@
 import axios from "axios";
+import { useSearchParams } from "react-router-dom";
 
 const articleApi = axios.create({
   baseURL: "https://nc-positive-news.herokuapp.com/api",
 });
 
 export const getArticles = (slug, sort) => {
+console.log(sort)
   return articleApi
-    .get("/articles", { params: { topic: slug } })
+    .get("/articles", {params: {topic:slug, sort_by: sort}})
     .then(({ data }) => {
       return data.articles;
     });
