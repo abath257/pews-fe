@@ -1,10 +1,11 @@
 import { deleteComment } from "../utils/api";
 
 const DeleteComment = ({
-  comments,
+
   setComments,
   setCountChange,
   comment_id,
+  comment
 }) => {
    
   function handleClick() {
@@ -16,14 +17,15 @@ const DeleteComment = ({
         return comment.comment_id !== comment_id;
       });
     });
-    deleteComment(comment_id).catch((err) => {
+    deleteComment(comment_id)
+    .catch((err) => {
         setCountChange((currCount) => {
             return currCount + 1;
           }) 
  setComments((currComments)=>{
-    return [...currComments, comments]
+    return [...currComments]
 })
-});
+}); 
   }
 
   return (

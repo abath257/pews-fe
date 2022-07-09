@@ -17,7 +17,7 @@ const Articles = () => {
     });
   }, [slug, sort, order]);
 
-  if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
+  if (isLoading === true) return <h2 className="loading">",.....loading"</h2>;
   return (
     <main className="main">
       <SortBar setSort={setSort} setOrder={setOrder} />

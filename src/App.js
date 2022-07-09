@@ -19,7 +19,6 @@ function App() {
       <div className="App">
       <Header />
       <Nav />
-     <p>test</p>
       <Routes>
         <Route path="/" element={<Articles />} />
         <Route path="/topics/:slug" element={<Articles />} />
