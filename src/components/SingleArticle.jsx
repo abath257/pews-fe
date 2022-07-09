@@ -6,16 +6,25 @@ import Comments from "./Comments";
 
 const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { article_id } = useParams();
+  console.log(article_id);
   const [article, setArticle] = useState();
 
   useEffect(() => {
-    getArticleById(article_id).then((article) => {
-      setArticle(article);
-      setIsLoading(false);
-    });
+    getArticleById(article_id)
+      .then((article) => {
+        setArticle(article);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(err.response.data.msg);
+      });
   }, [article_id]);
 
+  if (error)
+    return <p className="error_messsage">Oops, something went wrong</p>;
+    
   if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
   return (
     <>

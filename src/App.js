@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import {UserContext} from "./contexts/User"
-import SortBar from "./components/SortBar";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const[user ,setUser] = useState([{
@@ -24,8 +24,8 @@ function App() {
         <Route path="/topics/:slug" element={<Articles />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/topics/:topic/articles/:article_id"
-          element={<SingleArticle />}
-        />
+          element={<SingleArticle />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </div>
   </UserContext.Provider>

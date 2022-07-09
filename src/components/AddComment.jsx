@@ -2,57 +2,60 @@ import { useState, useContext } from "react";
 import { UserContext } from "../contexts/User";
 import { postComment } from "../utils/api";
 
-const AddComment = ({
-  comments,
-  setComments,
-  article_id,
-  setCountChange,
-}) => {
+const AddComment = ({ comments, setComments, article_id, setCountChange }) => {
   const [newComment, setNewComment] = useState("");
   const user = useContext(UserContext);
   const [hasPosted, setHasPosted] = useState(false);
+  const [commentMessage, setCommentMessage] = useState("Add a comment");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setHasPosted(true);
-    setCountChange((currCount) => {
-      return currCount + 1;
-    });
-    const date = new Date().toISOString();
-    const newCommentObj = {
-      body: newComment,
-      votes: 0,
-      author: user.username,
-      created_at: date,
-    };
-    setComments([...comments, newCommentObj]);
-    postComment(article_id, user, newComment).catch((err) => {
-      setComments((currComments) => {
-        return currComments.slice(-1);
-      });
+    if (newComment.length < 1) {
+      setCommentMessage("Please enter a comment");
+    } else {
+      setHasPosted(true);
       setCountChange((currCount) => {
         return currCount + 1;
-      })
-    });
-    setNewComment("");
-    setHasPosted(false);
+      });
+      const date = new Date().toISOString();
+      const newCommentObj = {
+        body: newComment,
+        votes: 0,
+        author: user.username,
+        created_at: date,
+      };
+      setComments([...comments, newCommentObj]);
+      postComment(article_id, user, newComment).catch((err) => {
+        setComments((currComments) => {
+          return currComments.slice(-1);
+        });
+        setCountChange((currCount) => {
+          return currCount + 1;
+        });
+      });
+      setNewComment("");
+      setHasPosted(false);
+    }
   };
 
   if (!hasPosted) {
     return (
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            type="text"
-            id="commentbox"
-            name="new-comment"
-            placeholder="Enter your comment here..."
-            value={newComment}
-            onChange={(event) => setNewComment(event.target.value)}
-          />
-        </label>
-        <button type="submit">Post comment</button>
-      </form>
+      <>
+        <h3>{commentMessage}</h3>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <input
+              type="text"
+              id="commentbox"
+              name="new-comment"
+              placeholder="Enter your comment here..."
+              value={newComment}
+              onChange={(event) => setNewComment(event.target.value)}
+            />
+          </label>
+          <button type="submit">Post comment</button>
+        </form>
+      </>
     );
   }
 
