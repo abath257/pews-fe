@@ -8,7 +8,6 @@ const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { article_id } = useParams();
-  console.log(article_id);
   const [article, setArticle] = useState();
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const SingleArticle = () => {
 
   if (error)
     return <p className="error_messsage">Oops, something went wrong</p>;
-    
+
   if (isLoading === true) return <h2 className="main">",.....loading"</h2>;
   return (
     <>
