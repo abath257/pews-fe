@@ -4,7 +4,7 @@ The PEWS app is a full stack application created as a project for Northcoders, a
 Users land on the full list of articles, which can then be sorted either by topic in the nav bar or a range of sort options in the sort bar. 
 A user can then view a single articvle and from here can vote on the article and add or remove comments. 
 
-This project was completed in a week with Northcoders as a student and as such may seem rough around the edges. I have plans to improve the styling, functionality and include the ability for users to log in and out. 
+This project was completed in a week with Northcoders as a student and as such needs more work. I have plans to improve the styling, functionality and include the ability for users to log in and out. 
 
 ### Links: 
 
