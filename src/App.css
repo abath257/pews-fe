@@ -1,4 +1,15 @@
-.App {
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "groovy";
+  src: url(./fonts/AbstractGroovy-K7Zdy.ttf)
+}
+
+App {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content 10vh auto;
@@ -8,12 +19,25 @@
     'main';
 }
 
-.header {
-  border: solid;
-  background-color: #84dfc5;
-  padding: 3rem;
+header {
+
+background-color: #e05e07;
+background-image: url(images/7.png);
+background-repeat: no-repeat;
+background-position: center;
+display: flex;
+
   grid-area: header;
   text-align: center;
+  height: 30vh;
+  justify-content: center;
+align-items: center;
+}
+
+header h1 {
+padding: 120px 40px 0 0;
+font-size: 3.5em;
+font-family: groovy;
 }
 
 .nav {
