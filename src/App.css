@@ -21,23 +21,31 @@ App {
 
 header {
 
-background-color: #e05e07;
-background-image: url(images/7.png);
+background-color: #e06809;
+
+background-image: url(images/10.png);
 background-repeat: no-repeat;
 background-position: center;
-display: flex;
+display: block;
 
   grid-area: header;
   text-align: center;
-  height: 30vh;
+ height: 300px;
   justify-content: center;
 align-items: center;
 }
 
 header h1 {
-padding: 120px 40px 0 0;
-font-size: 3.5em;
+  text-align: center;
+  line-height: normal;
+padding: 200px 50px 0 0;
+font-size: 3em;
 font-family: groovy;
+}
+
+header h3 {
+  text-align: center;
+  padding: 0 50px 0 0;
 }
 
 .nav {

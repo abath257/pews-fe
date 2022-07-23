@@ -9,6 +9,7 @@ const Header = () => {
     <>
       <header>
         <h1>Pews</h1>
+<h3>The positive news site</h3>
          {/* <img src={ require  ("../images/7.png")} alt = "A yellow half sun against an orange background" id = "header_img"/> */}
           {/* <h1>Positive News</h1> <h4>logged in as: {user[0].username}</h4> */}
       </header>
