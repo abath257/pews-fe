@@ -13,9 +13,9 @@ export const Nav = () => {
 
   return (
     <nav className="nav">
-      <section id="nav__links">
+     
         <Link to={`/`} id="nav__link">
-          <h3>Home</h3>
+          <h3>home</h3>
         </Link>
         {topics.map((topic) => {
           return (
@@ -24,7 +24,7 @@ export const Nav = () => {
             </Link>
           );
         })}
-      </section>
+ 
     </nav>
   );
 };

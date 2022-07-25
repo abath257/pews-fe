@@ -26,7 +26,7 @@ const Articles = () => {
 
   if (isLoading === true) return <h2 className="loading">",.....loading"</h2>;
   return (
-    <main className="main">
+    <main>
       <SortBar setSort={setSort} setOrder={setOrder} />
       <p>Sorted by {sort}</p>
       <h2 id="articles__header">Positive news articles</h2>

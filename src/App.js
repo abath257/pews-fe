@@ -17,8 +17,8 @@ function App() {
   return (
     <UserContext.Provider value={user}>
       <div className="App">
-      <Header />
       <Nav />
+      <Header />
       <Routes>
         <Route path="/" element={<Articles />} />
         <Route path="/topics/:slug" element={<Articles />} />

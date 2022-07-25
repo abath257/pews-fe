@@ -3,8 +3,8 @@ import * as React from "react";
 function SortBar({ setSort, setOrder }) {
   return (
     <>
-      <section className="sort__main">
-        <button
+      <section className="sortbar">
+        <button 
           onClick={() => {
             setSort("created_at");
           }}

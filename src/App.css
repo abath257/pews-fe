@@ -1,75 +1,69 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
   font-family: "groovy";
-  src: url(./fonts/AbstractGroovy-K7Zdy.ttf)
+  src: url(./fonts/AbstractGroovy-K7Zdy.ttf);
 }
 
+
 App {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: min-content 10vh auto;
-  grid-template-areas:
-    'header'
-    'nav'
-    'main';
+
 }
 
 header {
-
-background-color: #e06809;
-
-background-image: url(images/10.png);
-background-repeat: no-repeat;
-background-position: center;
-display: block;
-
-  grid-area: header;
-  text-align: center;
- height: 300px;
+position:relative;
+top:20px;
+  background-image: url(images/hazelwood.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-align-items: center;
+  height: 50vh;
 }
 
 header h1 {
-  text-align: center;
-  line-height: normal;
-padding: 200px 50px 0 0;
-font-size: 3em;
-font-family: groovy;
+  font-size: 5em;
+  font-family: groovy, 'far out', serif;
+  color: yellow;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 header h3 {
+  padding: 1px;
+  font-size: 1.5em;
+  color : navy;
+  background-color: yellow;
   text-align: center;
-  padding: 0 50px 0 0;
+  font-family: Helvetica, sans-serif;
 }
 
 .nav {
-grid-area: nav;
- text-align: center;
-  background-color: red;
-  padding-bottom: 3rem;
-
-}
-#nav__links {
-  display: flex;
-  flex-direction: row;
+width: 100%;
+text-align: center;
+background-color: yellow;
+position: fixed;
+z-index: 1;
+text-align: center;
 }
 
-#nav__link{
-  padding : 1rem;
+
+#nav__link {
+ color: navy;
 }
-.main {
-  grid-area: main;
-  background-color: peachpuff;
+
+
+main {
+  background-color: lightgoldenrodyellow;
 }
 
 #articles__header {
-  background-color: peachpuff;
+  background-color: lightgoldenrodyellow;
   margin: 0;
   padding: 50px;
   text-align: center;
@@ -89,23 +83,23 @@ grid-area: nav;
   list-style: none;
 }
 
-#singlearticle{
+#singlearticle {
   background-color: white;
-  margin:auto;
+  margin: auto;
   max-width: 80vw;
   max-height: auto;
 }
 
-.comments__listitem{
+.comments__listitem {
   list-style: none;
- grid-area: main;
- background-color: white;
- border-style: solid;
- box-shadow: 5px 10px;
- margin: 3rem;
- margin-top: 0;
- border-radius: 25px;
- list-style: none;
+  grid-area: main;
+  background-color: white;
+  border-style: solid;
+  box-shadow: 5px 10px;
+  margin: 3rem;
+  margin-top: 0;
+  border-radius: 25px;
+  list-style: none;
 }
 
 .AddComment {
@@ -117,29 +111,38 @@ grid-area: nav;
 #commentbox {
   text-align: center;
   height: 2rem;
-  width: 500px;  
+  width: 500px;
 }
 
+.sortbar{
+  display: flex;
+  flex-direction: row;
+  width:25%;
+  position:relative;
+  top:20px;
+  z-index: 1;
+}
 
 @media only screen and (min-width: 600px) {
-.App {
-  text-align: center;
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "nav main";
-  grid-template-columns: 12rem auto;
-    grid-template-rows: auto auto;
-}
-#nav__links {
-  display: flex;
-  flex-direction: column
+  .App {
+    text-align: center;
+   
   }
+  #nav__links {
+  text-align: space-around;
+  
+  }
+
+  #nav__link {
+    padding: 10px;
+    width:25%; 
+
+    display:block;
+    float:left;
+  }
+
   .AddComment {
     position: relative;
     background-color: white;
-   }
-
-   
+  }
 }
-

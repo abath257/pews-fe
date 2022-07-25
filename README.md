@@ -1,5 +1,5 @@
 ### Welcome to the Pews App!
-The PEWS app is a full stack application created as a project for Northcoders, a coding bootcamp. It uses a node-postgres/express backend created by myself to serve data to this React JS frontend. It has on the theme of a positive news app. Users can use the app to read news posted by other users and then interact with those articles in different ways. 
+The PEWS app is a full stack application created as a project for Northcoders, a coding bootcamp. It uses a node-postgres/express backend created by myself to serve data to this React JS frontend. It has been made with the theme of a positive news app in mind. Users can use the app to read news posted by other users and then interact with those articles in different ways. 
 
 Users land on the full list of articles, which can then be sorted either by topic in the nav bar or a range of sort options in the sort bar. 
 A user can then view a single article and from here can vote on the article and add or remove comments. 
